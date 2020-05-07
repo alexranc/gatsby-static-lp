@@ -1,3 +1,5 @@
+const domainToBuild = 'm.cdn.hear.com';
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -28,9 +30,18 @@ module.exports = {
       },
     },
     {
+      // disbale all pages from being built
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: `${__dirname}/src/pages/m.cdn.hear.com`,
+        path: `${__dirname}/src/pages`,
+        ignore: ['**'],
+      },
+    },
+    {
+      // build pages directly from domain directory
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages/${domainToBuild}`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
