@@ -1,4 +1,4 @@
-const domainToBuild = 'm.cdn.hear.com';
+const domainToBuild = process.env.DOMAIN || 'm.cdn.hear.com';
 
 module.exports = {
   siteMetadata: {
